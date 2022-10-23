@@ -31,36 +31,37 @@ public class TestOne {
     @BeforeEach
     void populate() {
         // Populate dates
-        eDate = new DateTime(2022, 8, 1, 12, 30, 0, 0);
-        sDate = new DateTime(2023, 6, 19, 12, 30, 0, 0);
-        dob1 = new DateTime(2001, 1, 10, 12, 30, 0, 0);
-        dob2 = new DateTime(2001, 4, 18, 12, 30, 0, 0);
-        dob3 = new DateTime(2001, 3, 26, 12, 30, 0, 0);
-        dob4 = new DateTime(2000, 8, 4, 12, 30, 0, 0);
-        dob5 = new DateTime(1979, 12, 11, 12, 30, 0, 0);
-        // Populate groups
-        group1 = new Student[]{s1, s2};
-        group2 = new Student[]{s3, s4};
-        mod1 = new Module[]{m1, m2};
-        mod2 = new Module[]{m2, m3};
-        // Populate Class Objects
-        // Programs
-        ece = new Program("ECE", group1, mod1, sDate, eDate);
-        comp = new Program("Comp Sci", group2, mod2, sDate, eDate);
-        progs = new Program[] {ece, comp};
-        // Students
-        s1 = new Student("John", 21, dob1, 1221, ece, mod1);
-        s2 = new Student("Amy", 21, dob2, 1222, ece, mod1);
-        s3 = new Student("Sarah", 21, dob3, 1223, comp, mod2);
-        s4 = new Student("Adam", 22, dob4, 1224, comp, mod2);
-        // Lecturer
-        l1 = new Lecturer("Aberdeen", 42, dob5, 12, mod1);
-        l2 = new Lecturer("Michaels", 42, dob5, 13, mod2);
-        // Modules
-        m1 = new Module("Programming_3", 29102, group1, new Program[]{ece, comp}, l1);
-        m2 = new Module("Digital Systems", 29213, group1, new Program[]{ece}, l1);
-        m3 = new Module("Cloud Architecture", 2813, group1, new Program[]{comp}, l1);
-
+        for (int i=0; i<2; i++) {
+            eDate = new DateTime(2022, 8, 1, 12, 30, 0, 0);
+            sDate = new DateTime(2023, 6, 19, 12, 30, 0, 0);
+            dob1 = new DateTime(2001, 1, 10, 12, 30, 0, 0);
+            dob2 = new DateTime(2001, 4, 18, 12, 30, 0, 0);
+            dob3 = new DateTime(2001, 3, 26, 12, 30, 0, 0);
+            dob4 = new DateTime(2000, 8, 4, 12, 30, 0, 0);
+            dob5 = new DateTime(1979, 12, 11, 12, 30, 0, 0);
+            // Populate groups
+            group1 = new Student[]{s1, s2};
+            group2 = new Student[]{s3, s4};
+            mod1 = new Module[]{m1, m2};
+            mod2 = new Module[]{m2, m3};
+            // Populate Class Objects
+            // Programs
+            ece = new Program("ECE", group1, mod1, sDate, eDate);
+            comp = new Program("Comp Sci", group2, mod2, sDate, eDate);
+            progs = new Program[] {ece, comp};
+            // Students
+            s1 = new Student("John", 21, dob1, 1221, ece, mod1);
+            s2 = new Student("Amy", 21, dob2, 1222, ece, mod1);
+            s3 = new Student("Sarah", 21, dob3, 1223, comp, mod2);
+            s4 = new Student("Adam", 22, dob4, 1224, comp, mod2);
+            // Lecturer
+            l1 = new Lecturer("Aberdeen", 42, dob5, 12, mod1);
+            l2 = new Lecturer("Michaels", 42, dob5, 13, mod2);
+            // Modules
+            m1 = new Module("Programming_3", 29102, group1, new Program[]{ece, comp}, l1);
+            m2 = new Module("Digital Systems", 29213, group1, new Program[]{ece}, l1);
+            m3 = new Module("Cloud Architecture", 2813, group1, new Program[]{comp}, l1);
+        }
     }
 
     // All Student Method Tests
